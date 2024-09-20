@@ -1,6 +1,0 @@
-{
-	"name": "integrationRuntime-oracle",
-	"properties": {
-		"type": "SelfHosted"
-	}
-}
