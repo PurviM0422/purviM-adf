@@ -1,0 +1,49 @@
+{
+	"name": "src_awsgluelog",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "awsgluelog.json",
+				"fileSystem": "temp-folder"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Version": {
+					"type": "string"
+				},
+				"Statement": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Effect": {
+								"type": "string"
+							},
+							"Action": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"Resource": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

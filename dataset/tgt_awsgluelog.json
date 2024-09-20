@@ -1,0 +1,19 @@
+{
+	"name": "tgt_awsgluelog",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "temp-folder",
+				"fileSystem": "bronze"
+			}
+		},
+		"schema": {}
+	}
+}
