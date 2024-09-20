@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-pvm-de-mrkprjct"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"Oracle1_connectionString": {
+			"value": ""
+		},
+		"DBDETrainingAzureSql_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlspvmmrkprjct.dfs.core.windows.net/"
+		},
+		"DBDETrainingAzureSql_properties_typeProperties_server": {
+			"value": "dbdetrainingpvm.database.windows.net"
+		},
+		"DBDETrainingAzureSql_properties_typeProperties_database": {
+			"value": "DBDETRAINING"
+		},
+		"DBDETrainingAzureSql_properties_typeProperties_userName": {
+			"value": "PurviMakanee"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
