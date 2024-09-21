@@ -51,7 +51,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get fileName from local folder').output.childItems",
+						"value": "@activity('Get Metadata').output.childItems",
 						"type": "Expression"
 					},
 					"isSequential": true,
