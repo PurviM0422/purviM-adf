@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get fileName from local folder",
+				"name": "Get Metadata",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -42,7 +42,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Get fileName from local folder",
+						"activity": "Get Metadata",
 						"dependencyConditions": [
 							"Succeeded"
 						]
