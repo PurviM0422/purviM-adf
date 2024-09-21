@@ -15,7 +15,7 @@
 				},
 				"userProperties": [
 					{
-						"name": "Custoemers files",
+						"name": "Customers files",
 						"value": "taking customers file name from local folder "
 					}
 				],
@@ -100,7 +100,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"fileName": {
-											"value": "@item().childItems",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
@@ -112,7 +112,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TableName": {
-											"value": "@replace(item().childItems,'.txt', '')\r\n",
+											"value": "@replace(item().name,'.txt', '')\n",
 											"type": "Expression"
 										}
 									}
