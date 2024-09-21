@@ -97,7 +97,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "CustomersText",
+									"referenceName": "src_Customerstxt_Localfiles",
 									"type": "DatasetReference",
 									"parameters": {
 										"fileName": {
