@@ -1,0 +1,12 @@
+{
+	"name": "DynamicSQLds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DynamicSqlLink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
