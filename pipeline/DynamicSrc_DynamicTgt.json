@@ -79,7 +79,26 @@
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
@@ -92,6 +111,30 @@
 										},
 										"databaseName": {
 											"value": "@pipeline().parameters.DatabaseName",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ADLSgen_raw_ds",
+									"type": "DatasetReference",
+									"parameters": {
+										"serverName": {
+											"value": "@pipeline().parameters.serverName",
+											"type": "Expression"
+										},
+										"databaseName": {
+											"value": "@pipeline().parameters.DatabaseName",
+											"type": "Expression"
+										},
+										"schemaName": {
+											"value": "@item().schemaName",
+											"type": "Expression"
+										},
+										"tableName": {
+											"value": "@item().tableName",
 											"type": "Expression"
 										}
 									}
