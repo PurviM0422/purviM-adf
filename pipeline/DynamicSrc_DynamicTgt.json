@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select QUOTENAME(t.name) as tableName, QUOTENAME(schema_name(t.schema_id)) as schemaName from sys.tables as t;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -71,6 +72,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
+									"sqlReaderQuery": {
+										"value": "@concat('SELECT * FROM ', item().schemaName, '.', item().tableName)",
+										"type": "Expression"
+									},
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -78,8 +83,18 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DynamicSQLds",
-									"type": "DatasetReference"
+									"referenceName": "DynamicSQL",
+									"type": "DatasetReference",
+									"parameters": {
+										"serverName": {
+											"value": "@pipeline().parameters.serverName",
+											"type": "Expression"
+										},
+										"databaseName": {
+											"value": "@pipeline().parameters.DatabaseName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}

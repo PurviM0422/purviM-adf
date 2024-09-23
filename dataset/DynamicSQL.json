@@ -2,18 +2,8 @@
 	"name": "DynamicSQL",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "DynamicSqlLink",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"serverName": {
-					"value": "@dataset().serverName",
-					"type": "Expression"
-				},
-				"DatabaseName": {
-					"value": "@dataset().databaseName",
-					"type": "Expression"
-				}
-			}
+			"referenceName": "DBDETrainingAzureSql",
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"serverName": {
